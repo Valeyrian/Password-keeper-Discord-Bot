@@ -1,16 +1,6 @@
-
-yaml
-Copier
-Modifier
-
----
-
-## 🇬🇧 English Version of `README.md`
-
-```markdown
 # Bot-BDE-Discord
 
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-ISC-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-v18%2B-brightgreen)](https://nodejs.org/)
 [![discord.js](https://img.shields.io/badge/discord.js-v14%2B-blueviolet)](https://discord.js.org/)
 
@@ -35,29 +25,30 @@ This bot securely manages passwords directly through Discord. Sensitive data is 
 ```env
 DISCORD_TOKEN=YourBotToken
 ALLOWED_USERS=ID1,ID2,ID3
+```
 🚀 Installation
-bash
-Copier
-Modifier
+```
 git clone https://github.com/Valeyrian/Bot-BDE-Discord.git
 cd Bot-BDE-Discord
 npm install
+```
 Then configure your .env file and run the bot:
 
-bash
-Copier
-Modifier
+```
 node index.js
+```
 💬 Commands
-All commands start with !pass:
+All commands start with ```!pass```:
 
 Command	Description
-!pass add <site> <login> <password> <key>	Add a password
-!pass get <site> <key>	Retrieve a password
-!pass list	List all stored sites
-!pass update <site> <login> <password> <key>	Update a password
-!pass remove <site>	Delete a stored site
-!pass help	Show help information
+```!pass add <site> <login> <password> <key>	```Add a password  
+```!pass get <site> <key>	```Retrieve a password  
+```!pass list	```List all stored sites  
+```!pass update <site> <login> <password> <key>```	Update a password  
+```!pass remove <site>	```Delete a stored site  
+```!pass help	```Show help information  
+
+
 🔒 Security
 Uses AES-256-CBC for encryption
 
@@ -76,6 +67,6 @@ crypto (Node.js)
 Contributions are welcome! Feel free to fork the repo and submit a pull request.
 
 📜 License
-This project is licensed under the ISC License.
+This project is licensed under the MIT License.
 
 ⚠️ Warning: This bot is intended for internal use only.
