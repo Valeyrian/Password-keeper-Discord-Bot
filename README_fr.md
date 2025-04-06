@@ -41,12 +41,12 @@ node index.js
 Toutes les commandes commencent par ```!pass``` :
 
 Commande	Description
-```!pass add <site> <login> <mdp> <clé>```	Ajoute un mot de passe
-```!pass get <site> <clé>```	Récupère un mot de passe
-```!pass list```	Liste les sites enregistrés
-```!pass update <site> <login> <mdp> <clé>```	Met à jour un mot de passe
-```!pass remove <site>```	Supprime un mot de passe
-```!pass help```	Affiche l’aide
+```!pass add <site> <login> <mdp> <clé>```	Ajoute un mot de passe  
+```!pass get <site> <clé>```	Récupère un mot de passe  
+```!pass list```	Liste les sites enregistrés  
+```!pass update <site> <login> <mdp> <clé>```	Met à jour un mot de passe  
+```!pass remove <site>```	Supprime un mot de passe  
+```!pass help```	Affiche l’aide  
 🔒 Sécurité
 Chiffrement via AES-256-CBC
 
@@ -63,6 +63,6 @@ crypto (Node.js)
 Les contributions sont les bienvenues ! Forkez le projet et proposez vos améliorations via une pull request.
 
 📜 Licence
-Ce projet est sous licence ISC.
+Ce projet est sous licence MIT.
 
 ⚠️ Attention : Ce bot est conçu pour un usage interne uniquement.
