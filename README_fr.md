@@ -4,7 +4,6 @@
 [![Node.js](https://img.shields.io/badge/Node.js-v18%2B-brightgreen)](https://nodejs.org/)
 [![Discord.js](https://img.shields.io/badge/discord.js-v14+-blueviolet)](https://discord.js.org/)
 
-Bot Discord du BDE, créé par et pour le BDE de l'ESIEA Laval.
 
 ## 📝 Description
 
