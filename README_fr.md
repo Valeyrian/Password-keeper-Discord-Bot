@@ -25,29 +25,28 @@ Ce bot permet de gérer des mots de passe de manière sécurisée sur Discord. L
 ```env
 DISCORD_TOKEN=VotreTokenIci
 ALLOWED_USERS=ID1,ID2,ID3
+```
 🚀 Installation
-bash
-Copier
-Modifier
+```
 git clone https://github.com/Valeyrian/Bot-BDE-Discord.git
 cd Bot-BDE-Discord
 npm install
+```
 Configurez ensuite le fichier .env puis lancez le bot :
 
-bash
-Copier
-Modifier
+```
 node index.js
+```
 💬 Commandes
-Toutes les commandes commencent par !pass :
+Toutes les commandes commencent par ```!pass``` :
 
 Commande	Description
-!pass add <site> <login> <mdp> <clé>	Ajoute un mot de passe
-!pass get <site> <clé>	Récupère un mot de passe
-!pass list	Liste les sites enregistrés
-!pass update <site> <login> <mdp> <clé>	Met à jour un mot de passe
-!pass remove <site>	Supprime un mot de passe
-!pass help	Affiche l’aide
+```!pass add <site> <login> <mdp> <clé>```	Ajoute un mot de passe
+```!pass get <site> <clé>```	Récupère un mot de passe
+```!pass list```	Liste les sites enregistrés
+```!pass update <site> <login> <mdp> <clé>```	Met à jour un mot de passe
+```!pass remove <site>```	Supprime un mot de passe
+```!pass help```	Affiche l’aide
 🔒 Sécurité
 Chiffrement via AES-256-CBC
 
@@ -57,9 +56,7 @@ Gardez vos clés de chiffrement privées
 
 📦 Dépendances
 discord.js
-
 dotenv
-
 crypto (Node.js)
 
 🤝 Contribution
