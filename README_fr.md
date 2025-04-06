@@ -1,7 +1,3 @@
-
-markdown
-Copier
-Modifier
 # Bot-BDE-Discord
 
 [![Licence ISC](https://img.shields.io/badge/Licence-ISC-blue.svg)](LICENSE)
