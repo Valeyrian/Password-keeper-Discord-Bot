@@ -1,6 +1,6 @@
 # Bot-BDE-Discord
 
-[![Licence ISC](https://img.shields.io/badge/Licence-ISC-blue.svg)](LICENSE)
+[![Licence MIT](https://img.shields.io/badge/Licence-ISC-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-v18%2B-brightgreen)](https://nodejs.org/)
 [![Discord.js](https://img.shields.io/badge/discord.js-v14+-blueviolet)](https://discord.js.org/)
 
