@@ -1,4 +1,4 @@
-# Bot-BDE-Discord
+# Bot-Discord-Gestionaire-De-MDP
 
 [![Licence MIT](https://img.shields.io/badge/Licence-ISC-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-v18%2B-brightgreen)](https://nodejs.org/)
