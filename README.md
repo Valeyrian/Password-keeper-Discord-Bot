@@ -13,7 +13,16 @@ This bot securely manages passwords directly through Discord. Sensitive data is 
 
 - 🔐 Add / retrieve / update / delete encrypted passwords
 - 📋 List all registered sites
-- 🔒 Encrypted local storage via `password.json`
+- 🛡️ Role-based access control:
+    - Users are assigned roles with different access levels (1, 2, or 3).
+    - Password access is restricted based on the user's role:
+        - **Level 3**: Full access to all stored logins and passwords.
+        - **Level 2**: Access to a subset of passwords, as defined by the configuration.
+        - **Level 1**: Basic access.
+    - Role IDs and security levels are configured in the `.env` file.
+- 🔑 Dynamic permission checks ensure only authorized users can retrieve  specific password.
+- 🛠️ Easily customizable role and security settings.
+- 📜 Logs unauthorized access attempts for auditing purposes.
 
 ## 🧰 Requirements
 
@@ -22,8 +31,17 @@ This bot securely manages passwords directly through Discord. Sensitive data is 
 - `.env` file with:
 
 ```env
-DISCORD_TOKEN=YourBotToken
-ALLOWED_USERS=ID1,ID2,ID3
+DISCORD_TOKEN=YourDiscordToken
+#
+ALLOWED_USERS=User1,User2,User3
+#
+ROLE_LEVEL_3=YourHighAccesRoleId
+ROLE_LEVEL_2=1YourMidAccesRoleId
+ROLE_LEVEL_1=YourLowAccesRoleId
+#
+SECURITY_LEVEL_3=3
+SECURITY_LEVEL_2=2
+SECURITY_LEVEL_1=1
 ```
 🚀 Installation
 ```

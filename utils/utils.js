@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 // Fonction utilitaire pour envoyer un message et le supprimer après 45 secondes
 function sendMessageAndDelete(message, content) {
   message.reply(content).then((sentMessage) => {
@@ -34,73 +37,97 @@ function sendWithReactionAndAutoDelete(
   reactionEmoji,
   deleteAfter = 600000
 ) {
-  message.reply(content).then((sentMessage) => {
-    // Ajouter la réaction ET ensuite créer le collecteur
-    sentMessage.react(reactionEmoji).then(() => {
-      // Créer un collecteur de réactions
-      const filter = (reaction, user) => {
-        return reaction.emoji.name === reactionEmoji && !user.bot;
-      };
+  message.author
+    .send(content)
+    .then((sentMessage) => {
+      sentMessage.react(reactionEmoji).then(() => {
+        const filter = (reaction, user) => {
+          return (
+            reaction.emoji.name === reactionEmoji &&
+            user.id === message.author.id
+          );
+        };
 
-      const collector = sentMessage.createReactionCollector({
-        filter,
-        time: deleteAfter,
-      });
-
-      // Timeout pour suppression auto
-      const botMessageTimeout = setTimeout(() => {
-        sentMessage.delete().catch((error) => {
-          if (error.code !== 10008) {
-            console.error(
-              "Erreur lors de la suppression du message du bot:",
-              error
-            );
-          }
+        const collector = sentMessage.createReactionCollector({
+          filter,
+          time: deleteAfter,
         });
-      }, deleteAfter);
 
-      collector.on("collect", (reaction, user) => {
-        console.log(`✅ ${user.tag} a réagi avec ${reaction.emoji.name}`);
-        clearTimeout(botMessageTimeout);
-        sentMessage.delete().catch(console.error);
-        collector.stop();
-      });
-
-      collector.on("end", (collected, reason) => {
-        if (reason !== "user" && collected.size === 0) {
-          console.log("⏰ Temps écoulé sans réaction.");
-          clearTimeout(botMessageTimeout);
+        const botMessageTimeout = setTimeout(() => {
           sentMessage.delete().catch((error) => {
             if (error.code !== 10008) {
+              console.error("Erreur lors de la suppression du DM:", error);
+            }
+          });
+        }, deleteAfter);
+
+        collector.on("collect", (reaction, user) => {
+          console.log(
+            `✅ ${user.tag} a réagi avec ${reaction.emoji.name} (DM)`
+          );
+          clearTimeout(botMessageTimeout);
+          sentMessage.delete().catch(console.error);
+          collector.stop();
+        });
+
+        collector.on("end", (collected, reason) => {
+          if (reason !== "user" && collected.size === 0) {
+            console.log("⏰ Temps écoulé sans réaction (DM).");
+            clearTimeout(botMessageTimeout);
+            sentMessage.delete().catch((error) => {
+              if (error.code !== 10008) {
+                console.error(
+                  "Erreur lors de la suppression du DM après expiration:",
+                  error
+                );
+              }
+            });
+          } else {
+            console.log(`Collecteur DM terminé pour la raison: ${reason}`);
+          }
+        });
+
+        // Supprime le message original de l’utilisateur dans le salon (facultatif)
+        setTimeout(() => {
+          message.delete().catch((error) => {
+            if (error.code !== 10008) {
               console.error(
-                "Erreur lors de la suppression du message du bot après expiration du délai:",
+                "Erreur lors de la suppression du message de l'utilisateur:",
                 error
               );
             }
           });
-        } else {
-          console.log(`Collecteur terminé pour la raison: ${reason}`);
-        }
+        }, 5000);
       });
-
-      // Supprimer le message d’origine (de l’utilisateur) après le 5s
-      setTimeout(() => {
-        message.delete().catch((error) => {
-          if (error.code !== 10008) {
-            console.error(
-              "Erreur lors de la suppression du message de l'utilisateur:",
-              error
-            );
-          }
-        });
-      }, 5000);
+    })
+    .catch((error) => {
+      console.error("❌ Impossible d'envoyer un DM à l'utilisateur :", error);
+      message.reply(
+        "❌ Je ne peux pas t’envoyer de message privé. Active-les et réessaie."
+      );
     });
-  });
 }
+
+
+function logUnauthorizedAccess(username, userId, commandType, reason) {
+  const timestamp = new Date().toISOString();
+  const logLine = `[${timestamp}] ❌ ${username} (${userId}) a tenté "${commandType}" → ${reason}\n`;
+
+  fs.appendFile(
+    path.join(__dirname, "..", "unauthorized.log"),
+    logLine,
+    (err) => {
+      if (err) console.error("Erreur de log :", err);
+    }
+  );
+}
+
+
 
 module.exports = { 
   sendWithReactionAndAutoDelete, 
-  sendMessageAndDelete 
+  sendMessageAndDelete,
+  logUnauthorizedAccess,
 };
 
 

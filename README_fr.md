@@ -10,10 +10,18 @@
 Ce bot permet de gérer des mots de passe de manière sécurisée sur Discord. Les données sensibles sont chiffrées avec **AES-256-CBC** et accessibles uniquement par les utilisateurs autorisés.
 
 ## ⚙️ Fonctionnalités
-
-- 🔐 Ajouter / récupérer / modifier / supprimer des mots de passe
-- 📋 Lister les sites enregistrés
-- 🔒 Stockage chiffré dans `password.json`
+- 🔐 Ajouter / récupérer / mettre à jour / supprimer des mots de passe chiffrés
+- 📋 Lister tous les sites enregistrés
+- 🛡️ Contrôle d'accès basé sur les rôles :
+    - Les utilisateurs se voient attribuer des rôles avec différents niveaux d'accès (1, 2 ou 3).
+    - L'accès aux mots de passe est restreint en fonction du rôle de l'utilisateur :
+        - **Niveau 3** : Accès complet à tous les identifiants et mots de passe enregistrés.
+        - **Niveau 2** : Accès à un sous-ensemble de mots de passe, défini par la configuration.
+        - **Niveau 1** : Accès de base.
+    - Les IDs des rôles et les niveaux de sécurité sont configurés dans le fichier `.env`.
+- 🔑 Des vérifications dynamiques des permissions garantissent que seuls les utilisateurs autorisés peuvent récupérer un mot de passe spécifique.
+- 🛠️ Paramètres de rôles et de sécurité facilement personnalisables.
+- 📜 Journalise les tentatives d'accès non autorisées à des fins d'audit.
 
 ## 🧰 Prérequis
 
