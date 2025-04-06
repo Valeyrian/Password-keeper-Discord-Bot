@@ -5,8 +5,6 @@
 [![Node.js](https://img.shields.io/badge/Node.js-v18%2B-brightgreen)](https://nodejs.org/)
 [![discord.js](https://img.shields.io/badge/discord.js-v14%2B-blueviolet)](https://discord.js.org/)
 
-A Discord bot developed by and for the ESIEA Laval student union (BDE).
-
 ## 📝 Description
 
 This bot securely manages passwords directly through Discord. Sensitive data is encrypted using **AES-256-CBC** and is only accessible to authorized users.
