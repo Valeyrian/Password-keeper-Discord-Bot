@@ -1,7 +1,7 @@
 
 # Password-Keeper-Discord-Bot
 
-[![License: MIT](https://img.shields.io/badge/License-ISC-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-v18%2B-brightgreen)](https://nodejs.org/)
 [![discord.js](https://img.shields.io/badge/discord.js-v14%2B-blueviolet)](https://discord.js.org/)
 
@@ -56,11 +56,9 @@ Never commit .env or password.json to public repositories
 Keep your encryption keys safe and private
 
 📦 Dependencies
-discord.js
-
-dotenv
-
-crypto (Node.js)
+```discord.js```
+```dotenv```
+```crypto (Node.js)```
 
 🤝 Contributions
 Contributions are welcome! Feel free to fork the repo and submit a pull request.

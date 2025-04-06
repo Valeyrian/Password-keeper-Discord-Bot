@@ -1,6 +1,6 @@
 # Bot-Discord-Gestionaire-De-MDP
 
-[![Licence MIT](https://img.shields.io/badge/Licence-ISC-blue.svg)](LICENSE)
+[![Licence MIT](https://img.shields.io/badge/Licence-MIT-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-v18%2B-brightgreen)](https://nodejs.org/)
 [![Discord.js](https://img.shields.io/badge/discord.js-v14+-blueviolet)](https://discord.js.org/)
 
@@ -54,9 +54,9 @@ Ne publiez jamais vos fichiers .env et password.json
 Gardez vos clés de chiffrement privées
 
 📦 Dépendances
-discord.js
-dotenv
-crypto (Node.js)
+```discord.js```
+```dotenv```
+```crypto (Node.js)```
 
 🤝 Contribution
 Les contributions sont les bienvenues ! Forkez le projet et proposez vos améliorations via une pull request.
