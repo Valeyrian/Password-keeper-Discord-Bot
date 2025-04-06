@@ -3,7 +3,10 @@ const { sendWithReactionAndAutoDelete } = require("../utils/utils.js");
 const { sendMessageAndDelete } = require("../utils/utils.js");
 
 module.exports = (args, password, message) => {
-  if (args.length < 4) sendMessageAndDelete(message,"Syntaxe: !pass get <site> <clé>");
+  if (args.length < 4) {
+    sendMessageAndDelete(message,"Syntaxe: !pass get <site> <clé>");
+    return;
+  }
   const [_, __, site, cle] = args;
 
   if (!password[site])

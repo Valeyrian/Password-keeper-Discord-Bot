@@ -46,7 +46,7 @@ client.once("ready", () => {
 
 // Quand un message est reçu
 client.on("messageCreate", (message) => {
-  //verrifie que ce n'est pas un bot
+  // vérifie que ce n'est pas un bot
   if (message.author.bot) return;
 
 
@@ -59,7 +59,7 @@ client.on("messageCreate", (message) => {
 
 
 
-  //verrifie que le user est autorisee
+  // vérifie que l'utilisateur est autorisé
   if (!allowedUsers.includes(message.author.id)) {
     console.log(`Utilisateur ${message.author.id} non autorisé`);
     return sendMessageAndDelete(
