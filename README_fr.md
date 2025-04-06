@@ -39,7 +39,7 @@ node index.js
 💬 Commandes
 Toutes les commandes commencent par ```!pass``` :
 
-Commande	Description
+Commande	Description :  
 ```!pass add <site> <login> <mdp> <clé>```	Ajoute un mot de passe  
 ```!pass get <site> <clé>```	Récupère un mot de passe  
 ```!pass list```	Liste les sites enregistrés  
