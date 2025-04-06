@@ -1,5 +1,5 @@
 
-# Bot-BDE-Discord
+# Password-Keeper-Discord-Bot
 
 [![License: MIT](https://img.shields.io/badge/License-ISC-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-v18%2B-brightgreen)](https://nodejs.org/)
