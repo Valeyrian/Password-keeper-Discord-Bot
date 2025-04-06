@@ -39,7 +39,7 @@ node index.js
 💬 Commands
 All commands start with ```!pass```:
 
-Command	Description
+Command	Description :     
 ```!pass add <site> <login> <password> <key>	```Add a password  
 ```!pass get <site> <key>	```Retrieve a password  
 ```!pass list	```List all stored sites  
