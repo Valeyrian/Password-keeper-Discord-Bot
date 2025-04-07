@@ -30,8 +30,17 @@ Ce bot permet de gérer des mots de passe de manière sécurisée sur Discord. L
 - Un fichier `.env` avec :
 
 ```env
-DISCORD_TOKEN=VotreTokenIci
-ALLOWED_USERS=ID1,ID2,ID3
+DISCORD_TOKEN=VotreTokenDiscord
+#
+ALLOWED_USERS=User1,User2,User3
+#
+ROLE_LEVEL_3=VotreIdDeRoleHautNiveau
+ROLE_LEVEL_2=1VotreIdDeRoleMoyenNiveau
+ROLE_LEVEL_1=VotreIdDeRoleBasNiveau
+#
+SECURITY_LEVEL_3=3
+SECURITY_LEVEL_2=2
+SECURITY_LEVEL_1=1
 ```
 🚀 Installation
 ```
