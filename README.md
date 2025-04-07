@@ -33,6 +33,7 @@ This bot securely manages passwords directly through Discord. Sensitive data is 
 ```env
 DISCORD_TOKEN=YourDiscordToken
 #
+NEED_RESTRICTED_USER_ACCESS=false
 ALLOWED_USERS=User1,User2,User3
 #
 ROLE_LEVEL_3=YourHighAccesRoleId
@@ -61,7 +62,7 @@ Command	Description :
 ```!pass add <site> <login> <password> <key>	```Add a password  
 ```!pass get <site> <key>	```Retrieve a password  
 ```!pass list	```List all stored sites  
-```!pass update <site> <login> <password> <key>```	Update a password  
+```!pass update <site> <login> <password> <key> <security Level: 1 to 3 (3 is the higher)>```	Update a password  
 ```!pass remove <site>	```Delete a stored site  
 ```!pass help	```Show help information  
 

@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-// Fonction utilitaire pour envoyer un message et le supprimer après 45 secondes
+// Fonction utilitaire pour envoyer un message et le supprimer après 30 secondes
 function sendMessageAndDelete(message, content) {
   message.reply(content).then((sentMessage) => {
     // Supprimer le message après 30 secondes (30000ms)
@@ -35,7 +35,7 @@ function sendWithReactionAndAutoDelete(
   message,
   content,
   reactionEmoji,
-  deleteAfter = 600000
+  deleteAfter = 600000 //10 minutes delays by default
 ) {
   message.author
     .send(content)
@@ -108,7 +108,6 @@ function sendWithReactionAndAutoDelete(
     });
 }
 
-
 function logUnauthorizedAccess(username, userId, commandType, reason) {
   const timestamp = new Date().toISOString();
   const logLine = `[${timestamp}] ❌ ${username} (${userId}) a tenté "${commandType}" → ${reason}\n`;
@@ -121,8 +120,6 @@ function logUnauthorizedAccess(username, userId, commandType, reason) {
     }
   );
 }
-
-
 
 module.exports = { 
   sendWithReactionAndAutoDelete, 

@@ -21,8 +21,11 @@ try {
 }
 
 // Charger la liste des utilisateurs autorisés depuis .env
-const allowedUsers = process.env.ALLOWED_USERS.split(",");
-
+const needLimitedAccess = process.env.NEED_RESTRICTED_USER_ACCESS;
+let allowedUsers
+if (needLimitedAccess === "true") {
+    allowedUsers = process.env.ALLOWED_USERS.split(",");
+}
 
 // Importer les commandes
 const addPassword = require("./commands/add");
@@ -52,21 +55,26 @@ client.on("messageCreate", (message) => {
 
   // Vérifie si le message commence par "!pass"
   const args = message.content.split(" "); // sépare le message en mots et les met dans args
-  if (!(args[0] === "!pass" && args.length >= 1)) {
+  if (!(args[0] === "!pass" && args.length >= 1)) 
+  {
     console.log("Ce n'est pas une commande valide");
     return;
   }
 
 
-
   // vérifie que l'utilisateur est autorisé
-  if (!allowedUsers.includes(message.author.id)) {
-    console.log(`Utilisateur ${message.author.id} non autorisé`);
-    return sendMessageAndDelete(
-      message,
-      "Désolé, tu n'es pas autorisé à utiliser ce bot."
-    );
-  }
+  if(needLimitedAccess === "true")
+    {
+    if (!allowedUsers.includes(message.author.id)) 
+      {
+      console.log(`Utilisateur ${message.author.id} non autorisé`);
+      
+      return sendMessageAndDelete(
+        message,
+        "Désolé, tu n'es pas autorisé à utiliser ce bot."
+      );
+      }
+    }
 
   // lecture des arguments de la commande
 

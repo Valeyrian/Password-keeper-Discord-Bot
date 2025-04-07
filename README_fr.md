@@ -30,8 +30,18 @@ Ce bot permet de gérer des mots de passe de manière sécurisée sur Discord. L
 - Un fichier `.env` avec :
 
 ```env
-DISCORD_TOKEN=VotreTokenIci
-ALLOWED_USERS=ID1,ID2,ID3
+DISCORD_TOKEN=YourDiscordToken
+#
+NEED_RESTRICTED_USER_ACCESS=false
+ALLOWED_USERS=User1,User2,User3
+#
+ROLE_LEVEL_3=YourHighAccesRoleId
+ROLE_LEVEL_2=1YourMidAccesRoleId
+ROLE_LEVEL_1=YourLowAccesRoleId
+#
+SECURITY_LEVEL_3=3
+SECURITY_LEVEL_2=2
+SECURITY_LEVEL_1=1
 ```
 🚀 Installation
 ```
@@ -51,7 +61,7 @@ Commande	Description :
 ```!pass add <site> <login> <mdp> <clé>```	Ajoute un mot de passe  
 ```!pass get <site> <clé>```	Récupère un mot de passe  
 ```!pass list```	Liste les sites enregistrés  
-```!pass update <site> <login> <mdp> <clé>```	Met à jour un mot de passe  
+```!pass update <site> <login> <mdp> <clé> <security Level: 1 to 3 (3 is the higher)>```	Met à jour un mot de passe  
 ```!pass remove <site>```	Supprime un mot de passe  
 ```!pass help```	Affiche l’aide  
 🔒 Sécurité
